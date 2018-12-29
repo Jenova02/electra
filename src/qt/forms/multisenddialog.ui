@@ -71,7 +71,6 @@ MultiSend will not be activated unless you have clicked Activate</string> <!--or
            </property>
           </widget>
          </item>
-         <!--
          <item>
           <widget class="QCheckBox" name="multiSendMasternodeCheckBox">
            <property name="text">
@@ -79,7 +78,6 @@ MultiSend will not be activated unless you have clicked Activate</string> <!--or
            </property>
           </widget>
          </item>
-         -->
         </layout>
        </item>
        <item>
