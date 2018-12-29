@@ -126,11 +126,11 @@ WalletView::WalletView(QWidget* parent) : QStackedWidget(parent),
     addWidget(sendCoinsPage);
     addWidget(explorerWindow);
 
-//    QSettings settings;
-//    if (settings.value("fShowMasternodesTab").toBool()) {
-//        masternodeListPage = new MasternodeList();
-//        addWidget(masternodeListPage);
-//    }
+    QSettings settings;
+    if (settings.value("fShowMasternodesTab").toBool()) {
+        masternodeListPage = new MasternodeList();
+        addWidget(masternodeListPage);
+    }
 
     // Clicking on a transaction on the overview pre-selects the transaction on the transaction history page
     connect(overviewPage, SIGNAL(transactionClicked(QModelIndex)), transactionView, SLOT(focusTransaction(QModelIndex)));
