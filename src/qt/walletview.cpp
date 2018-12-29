@@ -178,10 +178,10 @@ void WalletView::setClientModel(ClientModel* clientModel)
 
     overviewPage->setClientModel(clientModel);
     sendCoinsPage->setClientModel(clientModel);
-//    QSettings settings;
-//    if (settings.value("fShowMasternodesTab").toBool()) {
-//        masternodeListPage->setClientModel(clientModel);
-//    }
+    QSettings settings;
+    if (settings.value("fShowMasternodesTab").toBool()) {
+        masternodeListPage->setClientModel(clientModel);
+    }
 }
 
 void WalletView::setWalletModel(WalletModel* walletModel)
@@ -191,10 +191,10 @@ void WalletView::setWalletModel(WalletModel* walletModel)
     // Put transaction list in tabs
     transactionView->setModel(walletModel);
     overviewPage->setWalletModel(walletModel);
-//    QSettings settings;
-//    if (settings.value("fShowMasternodesTab").toBool()) {
-//        masternodeListPage->setWalletModel(walletModel);
-//    }
+    QSettings settings;
+    if (settings.value("fShowMasternodesTab").toBool()) {
+        masternodeListPage->setWalletModel(walletModel);
+    }
     privacyPage->setModel(walletModel);
     receiveCoinsPage->setModel(walletModel);
     sendCoinsPage->setModel(walletModel);
@@ -255,13 +255,13 @@ void WalletView::gotoBlockExplorerPage()
     setCurrentWidget(explorerWindow);
 }
 
-//void WalletView::gotoMasternodePage()
-//{
-//    QSettings settings;
-//    if (settings.value("fShowMasternodesTab").toBool()) {
-//        setCurrentWidget(masternodeListPage);
-//    }
-//}
+void WalletView::gotoMasternodePage()
+{
+    QSettings settings;
+    if (settings.value("fShowMasternodesTab").toBool()) {
+        setCurrentWidget(masternodeListPage);
+    }
+}
 
 void WalletView::gotoReceiveCoinsPage()
 {
